@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horacle</title>
+
+    <style>
+      html, body {
+        background: transparent !important;
+      }
+      
+      body {
+        margin: 0;
+      }
+
+      .arrow {
+        position: relative;
+        padding: 12px 0;
+      }
+
+      .arrow:before {
+        content: "";
+        height: 0;
+        width: 0;
+        border-width: 0 8px 12px 8px;
+        border-style: solid;
+        border-color: transparent transparent #2f2f2f transparent;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .container {
+          border-radius: 10px;
+          padding: 10px;
+          color: #f6f6f6;
+          background-color: #2f2f2f;
+          height: 680px;
+        }
+
+        .arrow::before {
+          border-color: transparent transparent #2f2f2f transparent;
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        .container {
+          border-radius: 10px;
+          padding: 10px;
+          color: #2f2f2f;
+          background-color: #f6f6f6;
+          height: 680px;
+        }
+
+        .arrow::before {
+          border-color: transparent transparent #f6f6f6 transparent;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="arrow">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
