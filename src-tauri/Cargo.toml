@@ -4,7 +4,7 @@ version = "1.0.0"
 description = "ChatGPT Cross Platform Tray Application"
 authors = ["levarr"]
 license = "MIT"
-repository = ""
+repository = "public"
 edition = "2021"
 
 
