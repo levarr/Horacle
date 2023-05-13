@@ -17,7 +17,7 @@ fn main() {
         .invoke_handler(tauri::generate_handler![greet])
         .system_tray(SystemTray::new().with_menu(build_menu()))
         .on_system_tray_event(|app, event| {
-            //tauri_plugin_positioner::on_tray_event(app, &event);
+            tauri_plugin_positioner::on_tray_event(app, &event);
             match event {
                 SystemTrayEvent::LeftClick { .. } => {
                     let window = app.get_window("main").unwrap();
@@ -62,11 +62,9 @@ fn build_menu() -> SystemTrayMenu {
 
 fn toggle_app_visibility(window: &Window) -> () {
     if !window.is_visible().unwrap() {
-        let _ = window.move_window(Position::Center).map(|()| {
+        let _ = window.move_window(Position::TrayCenter).map(|()| {
             window.show().unwrap();
             window.set_focus().unwrap();
         });
-    } else {
-        window.hide().unwrap()
-    }
+    } else { window.hide().unwrap(); }
 }
